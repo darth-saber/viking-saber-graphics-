@@ -1,9 +1,27 @@
-
+<!DOCTYPE html>
 <html lang="en">
 <head>
     <meta charset="UTF-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <title>Viking Sabre Graphics - Cutting-Edge Design</title>
+    <!-- SEO Optimization & Schema Markup -->
+    <meta name="description" content="Viking Sabre Graphics: Forging powerful visual identities, web design, motion graphics, and illustrations that cut through the noise. Unleash your brand's true potential.">
+    <meta name="keywords" content="graphic design, web design, brand identity, motion graphics, illustration, logo design, digital marketing, creative agency, Viking Sabre">
+    <meta name="author" content="Viking Sabre Graphics">
+    <link rel="canonical" href="https://www.vikingsabregraphics.com/">
+    <!-- Open Graph / Facebook -->
+    <meta property="og:type" content="website">
+    <meta property="og:url" content="https://www.vikingsabregraphics.com/">
+    <meta property="og:title" content="Viking Sabre Graphics - Unleash Your Brand's True Potential">
+    <meta property="og:description" content="Viking Sabre Graphics: Forging powerful visual identities, web design, motion graphics, and illustrations that cut through the noise.">
+    <meta property="og:image" content="https://placehold.co/1200x630/1f2937/a7f3d0?text=Viking+Sabre+Graphics+OG">
+    <!-- Twitter -->
+    <meta property="twitter:card" content="summary_large_image">
+    <meta property="twitter:url" content="https://www.vikingsabregraphics.com/">
+    <meta property="twitter:title" content="Viking Sabre Graphics - Unleash Your Brand's True Potential">
+    <meta property="twitter:description" content="Viking Sabre Graphics: Forging powerful visual identities, web design, motion graphics, and illustrations that cut through the noise.">
+    <meta property="twitter:image" content="https://placehold.co/1200x675/1f2937/a7f3d0?text=Viking+Sabre+Graphics+Twitter">
+
     <!-- Tailwind CSS CDN -->
     <script src="https://cdn.tailwindcss.com"></script>
     <!-- Google Fonts - Inter for body, Poppins for headings -->
@@ -331,14 +349,17 @@
         /* Mouse Follower Styles */
         #mouse-follower {
             position: fixed;
-            width: 30px; /* Initial size */
-            height: 30px;
-            background: radial-gradient(circle, rgba(0,177,64,0.7) 0%, rgba(0,71,179,0.7) 50%, transparent 70%);
-            border-radius: 50%;
+            width: 50px; /* Adjusted width for saber */
+            height: 150px; /* Adjusted height for saber */
+            background-image: url('http://googleusercontent.com/file_content/1'); /* Saber image */
+            background-size: contain; /* Ensure image fits */
+            background-repeat: no-repeat; /* Prevent tiling */
+            background-position: center; /* Center the image */
+            border-radius: 0; /* No longer a circle */
             pointer-events: none; /* Crucial to allow clicks through */
             transform: translate(-50%, -50%); /* Center the element on the cursor */
             transition: width 0.2s ease-out, height 0.2s ease-out, opacity 0.3s ease-out;
-            filter: blur(8px); /* Make it ethereal */
+            filter: none; /* Removed blur */
             opacity: 0; /* Hidden by default */
             z-index: 9998; /* Above everything but preloader */
         }
@@ -352,7 +373,7 @@
             box-shadow: 0 15px 30px rgba(0, 0, 0, 0.4); /* Deeper shadow */
         }
 
-        /* New: Navigation Link Hover Effect */
+        /* Navigation Link Hover Effect */
         .nav-link-hover {
             transition: all 0.3s ease-in-out; /* Smooth transition for all changes */
         }
@@ -362,7 +383,7 @@
             font-weight: 600; /* Make it semi-bold */
             letter-spacing: 0.02em; /* Subtle letter expansion */
         }
-        /* New: Active State for Navigation Links */
+        /* Active State for Navigation Links */
         .nav-link-active {
             color: #00b140; /* Green highlight */
             text-shadow: 0 0 12px rgba(0, 177, 64, 0.8), 0 0 20px rgba(0, 177, 64, 0.5); /* Stronger glow */
@@ -370,9 +391,75 @@
             font-weight: 700; /* Bolder */
             letter-spacing: 0.05em; /* More letter expansion */
         }
+
+        /* Cookie Consent Banner */
+        #cookie-consent-banner {
+            position: fixed;
+            bottom: 0;
+            left: 0;
+            right: 0;
+            background-color: #1e293b;
+            color: #e2e8f0;
+            padding: 1rem 2rem;
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+            justify-content: center;
+            gap: 1rem;
+            z-index: 10000;
+            box-shadow: 0 -4px 15px rgba(0, 0, 0, 0.3);
+            transform: translateY(100%);
+            transition: transform 0.5s ease-out;
+        }
+        #cookie-consent-banner.show {
+            transform: translateY(0);
+        }
+        @media (min-width: 768px) {
+            #cookie-consent-banner {
+                flex-direction: row;
+                justify-content: space-between;
+            }
+        }
+
+        /* Hero Video Background */
+        #hero-video-background {
+            position: absolute;
+            top: 50%;
+            left: 50%;
+            min-width: 100%;
+            min-height: 100%;
+            width: auto;
+            height: auto;
+            z-index: -1;
+            transform: translateX(-50%) translateY(-50%);
+            background-size: cover;
+            opacity: 0.15; /* Subtle overlay */
+        }
     </style>
 </head>
 <body class="antialiased">
+    <!-- Schema Markup for SEO -->
+    <script type="application/ld+json">
+    {
+      "@context": "https://schema.org",
+      "@type": "Organization",
+      "name": "Viking Sabre Graphics",
+      "url": "https://www.vikingsabregraphics.com/",
+      "logo": "https://placehold.co/100x100/1f2937/a7f3d0?text=Viking+Logo",
+      "contactPoint": {
+        "@type": "ContactPoint",
+        "telephone": "+1-555-VIKING",
+        "contactType": "customer service"
+      },
+      "sameAs": [
+        "https://facebook.com/vikingsabregraphics",
+        "https://twitter.com/vikingsabre",
+        "https://linkedin.com/company/vikingsabregraphics",
+        "https://instagram.com/vikingsabregraphics"
+      ]
+    }
+    </script>
+
     <!-- Preloader -->
     <div id="preloader" class="fixed inset-0 bg-gray-950 z-[9999] flex items-center justify-center flex-col">
         <div class="flex items-center space-x-4 mb-8">
@@ -410,9 +497,23 @@
                         <li class="nav-item"><a href="#home" class="text-gray-300 hover:text-green-400 transition duration-300 ease-in-out font-medium nav-link-hover" aria-label="Go to Home section">Home</a></li>
                         <li class="nav-item"><a href="#services" class="text-gray-300 hover:text-green-400 transition duration-300 ease-in-out font-medium nav-link-hover" aria-label="Go to Services section">Services</a></li>
                         <li class="nav-item"><a href="#portfolio" class="text-gray-300 hover:text-green-400 transition duration-300 ease-in-out font-medium nav-link-hover" aria-label="Go to Portfolio section">Portfolio</a></li>
+                        <li class="nav-item"><a href="#blog" class="text-gray-300 hover:text-green-400 transition duration-300 ease-in-out font-medium nav-link-hover" aria-label="Go to Blog section">Blog</a></li>
+                        <li class="nav-item"><a href="#shop" class="text-gray-300 hover:text-green-400 transition duration-300 ease-in-out font-medium nav-link-hover" aria-label="Go to Shop section">Shop</a></li>
                         <li class="nav-item"><a href="#about" class="text-gray-300 hover:text-green-400 transition duration-300 ease-in-out font-medium nav-link-hover" aria-label="Go to About section">About</a></li>
                         <li class="nav-item"><a href="#contact" class="text-gray-300 hover:text-green-400 transition duration-300 ease-in-out font-medium nav-link-hover" aria-label="Go to Contact section">Contact</a></li>
+                        <li><a href="#" class="text-gray-300 hover:text-green-400 transition duration-300 ease-in-out font-medium nav-link-hover" aria-label="Client Login">Client Login</a></li>
                     </ul>
+                    <!-- Multi-language Support (Conceptual) -->
+                    <div class="relative group">
+                        <button class="text-gray-300 hover:text-green-400 transition duration-300 ease-in-out font-medium ml-4 py-2 px-3 rounded-md" aria-label="Select Language">
+                            <i class="fas fa-globe mr-1"></i> EN <i class="fas fa-chevron-down ml-1 text-xs"></i>
+                        </button>
+                        <div class="absolute right-0 mt-2 w-24 bg-gray-800 rounded-md shadow-lg py-1 hidden group-hover:block">
+                            <a href="#" class="block px-4 py-2 text-sm text-gray-300 hover:bg-gray-700">EN</a>
+                            <a href="#" class="block px-4 py-2 text-sm text-gray-300 hover:bg-gray-700">FR</a>
+                            <a href="#" class="block px-4 py-2 text-sm text-gray-300 hover:bg-gray-700">DE</a>
+                        </div>
+                    </div>
                     <!-- Audio Toggle Button -->
                     <button id="audio-toggle" class="text-gray-300 hover:text-green-400 transition duration-300 ease-in-out font-medium ml-4" aria-label="Toggle background audio">
                         <i class="fas fa-volume-up" id="audio-icon"></i>
@@ -423,8 +524,12 @@
 
         <!-- Hero Section -->
         <section id="home" class="relative h-screen flex items-center justify-center text-center overflow-hidden pt-20" data-aos="fade-in">
-            <!-- Background Image/Video Placeholder -->
-            <div class="absolute inset-0 bg-cover bg-center" style="background-image: url('https://placehold.co/1920x1080/1f2937/a7f3d0?text=Abstract+Design+Background'); opacity: 0.1;" data-parallax-speed="0.1"></div>
+            <!-- Video Background -->
+            <video autoplay muted loop id="hero-video-background" preload="auto">
+                <source src="https://assets.mixkit.co/videos/preview/mixkit-abstract-particles-moving-in-a-dark-background-1209-large.mp4" type="video/mp4">
+                <!-- Fallback image if video not supported -->
+                <img src="https://placehold.co/1920x1080/1f2937/a7f3d0?text=Abstract+Design+Background" alt="Abstract particle background" style="width:100%; height:100%; object-fit:cover;">
+            </video>
             
             <!-- Dynamic Background Layers for Hero Section (with parallax data attributes) -->
             <div class="hero-radial-gradient" data-parallax-speed="0.2"></div>
@@ -433,10 +538,10 @@
             <div class="hero-starfield" data-parallax-speed="0.02"></div>
 
             <div class="relative z-10 p-6 md:p-12 max-w-4xl mx-auto" data-aos="zoom-in" data-aos-delay="300">
-                <h1 class="text-5xl md:text-7xl font-extrabold leading-tight mb-6 text-white text-shadow-lg hero-text-glow">
+                <h1 class="text-5xl md:text-7xl font-extrabold leading-tight mb-6 text-white text-shadow-lg hero-text-glow" data-cms-editable="hero-heading">
                     Unleash Your Brand's <span class="text-gradient">True Potential</span>
                 </h1>
-                <p class="text-lg md:text-xl text-gray-200 mb-8">
+                <p class="text-lg md:text-xl text-gray-200 mb-8" data-cms-editable="hero-subheading">
                     At Viking Sabre Graphics, I forge powerful visual identities and captivating designs that cut through the noise.
                 </p>
                 <div class="flex flex-col sm:flex-row justify-center space-y-4 sm:space-y-0 sm:space-x-6">
@@ -470,10 +575,10 @@
             <!-- Services Section -->
             <section id="services" class="py-16 md:py-24 bg-gray-900" data-aos="fade-up">
                 <div class="container mx-auto px-6 md:px-12 text-center">
-                    <h2 class="text-4xl md:text-5xl font-bold mb-12 text-white text-gradient" data-aos="fade-up">My Core Services</h2>
+                    <h2 class="text-4xl md:text-5xl font-bold mb-12 text-white text-gradient" data-aos="fade-up" data-cms-editable="services-heading">My Core Services</h2>
                     <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-2 gap-10">
                         <!-- Service Card 1: Brand Identity Design -->
-                        <div class="bg-gray-800 p-8 rounded-xl shadow-xl transition-all duration-300 transform group service-card-hover" data-aos="fade-up" data-aos-delay="100">
+                        <div class="bg-gray-800 p-8 rounded-xl shadow-xl transition-all duration-300 transform group service-card-hover" data-aos="fade-up" data-aos-delay="100" data-cms-editable="service-card-1">
                             <div class="text-5xl text-green-400 mb-6 group-hover:text-green-300 transition-colors duration-300">
                                 <i class="fas fa-palette" aria-hidden="true"></i>
                             </div>
@@ -483,7 +588,7 @@
                             </p>
                         </div>
                         <!-- Service Card 2: Web Design -->
-                        <div class="bg-gray-800 p-8 rounded-xl shadow-xl transition-all duration-300 transform group service-card-hover" data-aos="fade-up" data-aos-delay="200">
+                        <div class="bg-gray-800 p-8 rounded-xl shadow-xl transition-all duration-300 transform group service-card-hover" data-aos="fade-up" data-aos-delay="200" data-cms-editable="service-card-2">
                             <div class="text-5xl text-blue-400 mb-6 group-hover:text-blue-300 transition-colors duration-300">
                                 <i class="fas fa-laptop-code" aria-hidden="true"></i>
                             </div>
@@ -493,7 +598,7 @@
                             </p>
                         </div>
                         <!-- Service Card 3: Motion Graphics & Animation -->
-                        <div class="bg-gray-800 p-8 rounded-xl shadow-xl transition-all duration-300 transform group service-card-hover" data-aos="fade-up" data-aos-delay="300">
+                        <div class="bg-gray-800 p-8 rounded-xl shadow-xl transition-all duration-300 transform group service-card-hover" data-aos="fade-up" data-aos-delay="300" data-cms-editable="service-card-3">
                             <div class="text-5xl text-green-400 mb-6 group-hover:text-green-300 transition-colors duration-300">
                                 <i class="fas fa-video" aria-hidden="true"></i>
                             </div>
@@ -503,7 +608,7 @@
                             </p>
                         </div>
                         <!-- Service Card 4: Illustration & Iconography -->
-                        <div class="bg-gray-800 p-8 rounded-xl shadow-xl transition-all duration-300 transform group service-card-hover" data-aos="fade-up" data-aos-delay="400">
+                        <div class="bg-gray-800 p-8 rounded-xl shadow-xl transition-all duration-300 transform group service-card-hover" data-aos="fade-up" data-aos-delay="400" data-cms-editable="service-card-4">
                             <div class="text-5xl text-blue-400 mb-6 group-hover:text-blue-300 transition-colors duration-300">
                                 <i class="fas fa-vector-square" aria-hidden="true"></i>
                             </div>
@@ -522,38 +627,62 @@
             <!-- Portfolio Section -->
             <section id="portfolio" class="py-16 md:py-24 gradient-bg" data-aos="fade-up">
                 <div class="container mx-auto px-6 md:px-12 text-center">
-                    <h2 class="text-4xl md:text-5xl font-bold mb-12 text-white" data-aos="fade-up">My Masterpieces</h2>
-                    <div class="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-2 gap-8">
+                    <h2 class="text-4xl md:text-5xl font-bold mb-8 text-white" data-aos="fade-up" data-cms-editable="portfolio-heading">My Masterpieces</h2>
+                    <!-- Portfolio Filters -->
+                    <div class="flex flex-wrap justify-center gap-4 mb-12" data-aos="fade-up" data-aos-delay="100">
+                        <button class="portfolio-filter-btn bg-gray-800 text-white py-2 px-6 rounded-full hover:bg-green-600 transition duration-300 active-filter" data-filter="all" aria-label="Show All Projects">All</button>
+                        <button class="portfolio-filter-btn bg-gray-800 text-white py-2 px-6 rounded-full hover:bg-green-600 transition duration-300" data-filter="branding" aria-label="Show Branding Projects">Branding</button>
+                        <button class="portfolio-filter-btn bg-gray-800 text-white py-2 px-6 rounded-full hover:bg-green-600 transition duration-300" data-filter="web" aria-label="Show Web Design Projects">Web Design</button>
+                        <button class="portfolio-filter-btn bg-gray-800 text-white py-2 px-6 rounded-full hover:bg-green-600 transition duration-300" data-filter="motion" aria-label="Show Motion Graphics Projects">Motion Graphics</button>
+                        <button class="portfolio-filter-btn bg-gray-800 text-white py-2 px-6 rounded-full hover:bg-green-600 transition duration-300" data-filter="illustration" aria-label="Show Illustration Projects">Illustration</button>
+                    </div>
+
+                    <div id="portfolio-grid" class="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-2 gap-8">
                         <!-- Portfolio Item 1 -->
-                        <div class="bg-gray-800 rounded-xl shadow-lg overflow-hidden group transition-shadow duration-300 portfolio-card-hover" data-aos="fade-up" data-aos-delay="100">
-                            <img src="https://placehold.co/600x400/2d3748/a0aec0?text=Brand+Identity" alt="Brand Identity Project" class="w-full h-64 object-cover transform group-hover:scale-105 transition-transform duration-500" loading="lazy">
+                        <div class="bg-gray-800 rounded-xl shadow-lg overflow-hidden group transition-shadow duration-300 portfolio-card-hover portfolio-item branding" data-aos="fade-up" data-aos-delay="100" data-cms-editable="portfolio-item-1">
+                            <img src="https://placehold.co/600x400/2d3748/a0aec0?text=Brand+Identity" alt="Aetherium Corp. Rebrand" class="w-full h-64 object-cover transform group-hover:scale-105 transition-transform duration-500" loading="lazy">
                             <div class="p-6">
                                 <h3 class="text-xl font-semibold mb-2 text-white">Aetherium Corp. Rebrand</h3>
                                 <p class="text-gray-300 text-sm">Complete brand overhaul for a tech startup, focusing on modern aesthetics.</p>
                             </div>
                         </div>
                         <!-- Portfolio Item 2 -->
-                        <div class="bg-gray-800 rounded-xl shadow-lg overflow-hidden group transition-shadow duration-300 portfolio-card-hover" data-aos="fade-up" data-aos-delay="200">
-                            <img src="https://placehold.co/600x400/2d3748/a0aec0?text=Web+Design" alt="Web Design Project" class="w-full h-64 object-cover transform group-hover:scale-105 transition-transform duration-500" loading="lazy">
+                        <div class="bg-gray-800 rounded-xl shadow-lg overflow-hidden group transition-shadow duration-300 portfolio-card-hover portfolio-item web" data-aos="fade-up" data-aos-delay="200" data-cms-editable="portfolio-item-2">
+                            <img src="https://placehold.co/600x400/2d3748/a0aec0?text=Web+Design" alt="EcoHarvest Website Redesign" class="w-full h-64 object-cover transform group-hover:scale-105 transition-transform duration-500" loading="lazy">
                             <div class="p-6">
                                 <h3 class="text-xl font-semibold mb-2 text-white">EcoHarvest Website Redesign</h3>
                                 <p class="text-gray-300 text-sm">User-centric web design for a sustainable agriculture platform.</p>
                             </div>
                         </div>
                         <!-- Portfolio Item 3 -->
-                        <div class="bg-gray-800 p-8 rounded-xl shadow-lg overflow-hidden group transition-shadow duration-300 portfolio-card-hover" data-aos="fade-up" data-aos-delay="300">
-                            <img src="https://placehold.co/600x400/2d3748/a0aec0?text=Motion+Graphics" alt="Motion Graphics Project" class="w-full h-64 object-cover transform group-hover:scale-105 transition-transform duration-500" loading="lazy">
+                        <div class="bg-gray-800 p-8 rounded-xl shadow-lg overflow-hidden group transition-shadow duration-300 portfolio-card-hover portfolio-item motion" data-aos="fade-up" data-aos-delay="300" data-cms-editable="portfolio-item-3">
+                            <img src="https://placehold.co/600x400/2d3748/a0aec0?text=Motion+Graphics" alt="TechSummit 2025 Intro Animation" class="w-full h-64 object-cover transform group-hover:scale-105 transition-transform duration-500" loading="lazy">
                             <div class="p-6">
                                 <h3 class="text-xl font-semibold mb-2 text-white">TechSummit 2025 Intro Animation</h3>
                                 <p class="text-gray-300 text-sm">Engaging motion graphics for a leading technology conference.</p>
                             </div>
                         </div>
                         <!-- Portfolio Item 4 -->
-                        <div class="bg-gray-800 p-8 rounded-xl shadow-lg overflow-hidden group transition-shadow duration-300 portfolio-card-hover" data-aos="fade-up" data-aos-delay="400">
-                            <img src="https://placehold.co/600x400/2d3748/a0aec0?text=Illustration" alt="Illustration Project" class="w-full h-64 object-cover transform group-hover:scale-105 transition-transform duration-500" loading="lazy">
+                        <div class="bg-gray-800 p-8 rounded-xl shadow-lg overflow-hidden group transition-shadow duration-300 portfolio-card-hover portfolio-item illustration" data-aos="fade-up" data-aos-delay="400" data-cms-editable="portfolio-item-4">
+                            <img src="https://placehold.co/600x400/2d3748/a0aec0?text=Illustration" alt="Children's Book Illustrations" class="w-full h-64 object-cover transform group-hover:scale-105 transition-transform duration-500" loading="lazy">
                             <div class="p-6">
                                 <h3 class="text-xl font-semibold mb-2 text-white">Children's Book Illustrations</h3>
                                 <p class="text-gray-300 text-sm">Whimsical and vibrant illustrations for a new educational children's book.</p>
+                            </div>
+                        </div>
+                        <!-- More Portfolio Items for filtering -->
+                        <div class="bg-gray-800 rounded-xl shadow-lg overflow-hidden group transition-shadow duration-300 portfolio-card-hover portfolio-item web" data-aos="fade-up" data-aos-delay="100">
+                            <img src="https://placehold.co/600x400/2d3748/a0aec0?text=E-commerce+Site" alt="E-commerce Site Design" class="w-full h-64 object-cover transform group-hover:scale-105 transition-transform duration-500" loading="lazy">
+                            <div class="p-6">
+                                <h3 class="text-xl font-semibold mb-2 text-white">Quantum Storefront</h3>
+                                <p class="text-gray-300 text-sm">Sleek e-commerce platform design for a futuristic gadget shop.</p>
+                            </div>
+                        </div>
+                        <div class="bg-gray-800 rounded-xl shadow-lg overflow-hidden group transition-shadow duration-300 portfolio-card-hover portfolio-item branding" data-aos="fade-up" data-aos-delay="200">
+                            <img src="https://placehold.co/600x400/2d3748/a0aec0?text=Logo+Design" alt="Cafe Logo Design" class="w-full h-64 object-cover transform group-hover:scale-105 transition-transform duration-500" loading="lazy">
+                            <div class="p-6">
+                                <h3 class="text-xl font-semibold mb-2 text-white">The Daily Grind Cafe Logo</h3>
+                                <p class="text-gray-300 text-sm">Rustic and inviting logo design for a local coffee shop.</p>
                             </div>
                         </div>
                     </div>
@@ -568,18 +697,133 @@
             <!-- Section Divider after Portfolio -->
             <div class="section-divider-wave top-to-bottom"></div>
 
+            <!-- Blog Section -->
+            <section id="blog" class="py-16 md:py-24 bg-gray-900" data-aos="fade-up">
+                <div class="container mx-auto px-6 md:px-12 text-center">
+                    <h2 class="text-4xl md:text-5xl font-bold mb-12 text-white text-gradient" data-aos="fade-up" data-cms-editable="blog-heading">My Latest Insights</h2>
+                    <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8">
+                        <!-- Blog Post 1 -->
+                        <div class="bg-gray-800 rounded-xl shadow-lg overflow-hidden group hover:shadow-2xl transition-shadow duration-300" data-aos="fade-up" data-aos-delay="100" data-cms-editable="blog-post-1">
+                            <img src="https://placehold.co/600x300/2d3748/a0aec0?text=Blog+Post+1" alt="The Power of Brand Storytelling" class="w-full h-48 object-cover transform group-hover:scale-105 transition-transform duration-500" loading="lazy">
+                            <div class="p-6 text-left">
+                                <h3 class="text-xl font-semibold mb-2 text-white">The Power of Brand Storytelling</h3>
+                                <p class="text-gray-400 text-sm mb-4">By Admin | July 20, 2025</p>
+                                <p class="text-gray-300 text-base leading-relaxed line-clamp-3">
+                                    Discover how compelling narratives can transform your brand's connection with its audience...
+                                </p>
+                                <a href="#" class="text-green-400 hover:underline mt-4 inline-block" aria-label="Read more about brand storytelling">Read More <i class="fas fa-arrow-right ml-1 text-sm"></i></a>
+                            </div>
+                        </div>
+                        <!-- Blog Post 2 -->
+                        <div class="bg-gray-800 rounded-xl shadow-lg overflow-hidden group hover:shadow-2xl transition-shadow duration-300" data-aos="fade-up" data-aos-delay="200" data-cms-editable="blog-post-2">
+                            <img src="https://placehold.co/600x300/2d3748/a0aec0?text=Blog+Post+2" alt="Web Design Trends 2025" class="w-full h-48 object-cover transform group-hover:scale-105 transition-transform duration-500" loading="lazy">
+                            <div class="p-6 text-left">
+                                <h3 class="text-xl font-semibold mb-2 text-white">Top Web Design Trends for 2025</h3>
+                                <p class="text-gray-400 text-sm mb-4">By Admin | July 15, 2025</p>
+                                <p class="text-gray-300 text-base leading-relaxed line-clamp-3">
+                                    Stay ahead of the curve with the latest innovations in responsive design, dark mode, and more...
+                                </p>
+                                <a href="#" class="text-green-400 hover:underline mt-4 inline-block" aria-label="Read more about web design trends">Read More <i class="fas fa-arrow-right ml-1 text-sm"></i></a>
+                            </div>
+                        </div>
+                        <!-- Blog Post 3 -->
+                        <div class="bg-gray-800 rounded-xl shadow-lg overflow-hidden group hover:shadow-2xl transition-shadow duration-300" data-aos="fade-up" data-aos-delay="300" data-cms-editable="blog-post-3">
+                            <img src="https://placehold.co/600x300/2d3748/a0aec0?text=Blog+Post+3" alt="Motion Graphics for Marketing" class="w-full h-48 object-cover transform group-hover:scale-105 transition-transform duration-500" loading="lazy">
+                            <div class="p-6 text-left">
+                                <h3 class="text-xl font-semibold mb-2 text-white">Motion Graphics: The Future of Digital Marketing</h3>
+                                <p class="text-gray-400 text-sm mb-4">By Admin | July 10, 2025</p>
+                                <p class="text-gray-300 text-base leading-relaxed line-clamp-3">
+                                    Learn how animated visuals can boost engagement and conversion rates for your campaigns...
+                                </p>
+                                <a href="#" class="text-green-400 hover:underline mt-4 inline-block" aria-label="Read more about motion graphics">Read More <i class="fas fa-arrow-right ml-1 text-sm"></i></a>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="mt-12" data-aos="fade-up">
+                        <a href="#" class="bg-white text-blue-700 hover:bg-gray-200 font-bold py-3 px-8 rounded-full shadow-lg transition duration-300 ease-in-out viking-button-white" aria-label="View all blog posts">
+                            View All Posts <i class="fas fa-book-open ml-2"></i>
+                        </a>
+                    </div>
+                </div>
+            </section>
+
+            <!-- Section Divider after Blog -->
+            <div class="section-divider-wave bottom-to-top"></div>
+
+            <!-- Shop Section (E-commerce Capability - Conceptual) -->
+            <section id="shop" class="py-16 md:py-24 gradient-bg" data-aos="fade-up">
+                <div class="container mx-auto px-6 md:px-12 text-center">
+                    <h2 class="text-4xl md:text-5xl font-bold mb-12 text-white" data-aos="fade-up" data-cms-editable="shop-heading">My Digital Forge</h2>
+                    <p class="text-lg text-gray-200 mb-10 max-w-3xl mx-auto" data-aos="fade-up" data-aos-delay="100">
+                        Explore my curated collection of design assets, templates, and exclusive resources.
+                    </p>
+                    <div class="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-8">
+                        <!-- Product Card 1 -->
+                        <div class="bg-gray-800 rounded-xl shadow-lg overflow-hidden group hover:shadow-2xl transition-shadow duration-300" data-aos="fade-up" data-aos-delay="150" data-cms-editable="shop-product-1">
+                            <img src="https://placehold.co/600x400/2d3748/a0aec0?text=Logo+Template" alt="Viking Logo Pack" class="w-full h-48 object-cover transform group-hover:scale-105 transition-transform duration-500" loading="lazy">
+                            <div class="p-6 text-left">
+                                <h3 class="text-xl font-semibold mb-2 text-white">Viking Logo Pack</h3>
+                                <p class="text-gray-300 text-base mb-4">A collection of 10 customizable Viking-themed logo templates.</p>
+                                <div class="flex items-center justify-between">
+                                    <span class="text-2xl font-bold text-green-400">$49.99</span>
+                                    <button class="bg-blue-600 hover:bg-blue-700 text-white font-bold py-2 px-6 rounded-full transition duration-300 ease-in-out viking-button-blue" aria-label="Add Viking Logo Pack to cart">
+                                        Add to Cart <i class="fas fa-shopping-cart ml-2"></i>
+                                    </button>
+                                </div>
+                            </div>
+                        </div>
+                        <!-- Product Card 2 -->
+                        <div class="bg-gray-800 rounded-xl shadow-lg overflow-hidden group hover:shadow-2xl transition-shadow duration-300" data-aos="fade-up" data-aos-delay="250" data-cms-editable="shop-product-2">
+                            <img src="https://placehold.co/600x400/2d3748/a0aec0?text=Web+Template" alt="Modern Portfolio Template" class="w-full h-48 object-cover transform group-hover:scale-105 transition-transform duration-500" loading="lazy">
+                            <div class="p-6 text-left">
+                                <h3 class="text-xl font-semibold mb-2 text-white">Modern Portfolio Template</h3>
+                                <p class="text-gray-300 text-base mb-4">Responsive HTML/CSS template for designers and creatives.</p>
+                                <div class="flex items-center justify-between">
+                                    <span class="text-2xl font-bold text-green-400">$79.99</span>
+                                    <button class="bg-blue-600 hover:bg-blue-700 text-white font-bold py-2 px-6 rounded-full transition duration-300 ease-in-out viking-button-blue" aria-label="Add Modern Portfolio Template to cart">
+                                        Add to Cart <i class="fas fa-shopping-cart ml-2"></i>
+                                    </button>
+                                </div>
+                            </div>
+                        </div>
+                        <!-- Product Card 3 -->
+                        <div class="bg-gray-800 rounded-xl shadow-lg overflow-hidden group hover:shadow-2xl transition-shadow duration-300" data-aos="fade-up" data-aos-delay="350" data-cms-editable="shop-product-3">
+                            <img src="https://placehold.co/600x400/2d3748/a0aec0?text=Icon+Set" alt="Abstract Icon Set" class="w-full h-48 object-cover transform group-hover:scale-105 transition-transform duration-500" loading="lazy">
+                            <div class="p-6 text-left">
+                                <h3 class="text-xl font-semibold mb-2 text-white">Abstract Icon Set</h3>
+                                <p class="text-gray-300 text-base mb-4">50 unique vector icons for web and app interfaces.</p>
+                                <div class="flex items-center justify-between">
+                                    <span class="text-2xl font-bold text-green-400">$29.99</span>
+                                    <button class="bg-blue-600 hover:bg-blue-700 text-white font-bold py-2 px-6 rounded-full transition duration-300 ease-in-out viking-button-blue" aria-label="Add Abstract Icon Set to cart">
+                                        Add to Cart <i class="fas fa-shopping-cart ml-2"></i>
+                                    </button>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="mt-12" data-aos="fade-up">
+                        <a href="#" class="bg-white text-blue-700 hover:bg-gray-200 font-bold py-3 px-8 rounded-full shadow-lg transition duration-300 ease-in-out viking-button-white" aria-label="View all products">
+                            View All Products <i class="fas fa-store ml-2"></i>
+                        </a>
+                    </div>
+                </div>
+            </section>
+
+            <!-- Section Divider after Shop -->
+            <div class="section-divider-wave top-to-bottom"></div>
+
             <!-- About Section -->
             <section id="about" class="py-16 md:py-24 bg-gray-900" data-aos="fade-up">
                 <div class="container mx-auto px-6 md:px-12 flex flex-col lg:flex-row items-center lg:space-x-12">
                     <div class="lg:w-1/2 mb-10 lg:mb-0" data-aos="fade-right">
-                        <img src="https://placehold.co/800x600/1f2937/a7f3d0?text=My+Story" alt="Viking Sabre Graphics Founder" class="rounded-xl shadow-2xl w-full h-auto object-cover" loading="lazy">
+                        <img src="https://placehold.co/800x600/1f2937/a7f3d0?text=My+Story" alt="Viking Sabre Graphics Founder" class="rounded-xl shadow-2xl w-full h-auto object-cover" loading="lazy" data-cms-editable="about-image">
                     </div>
                     <div class="lg:w-1/2 text-center lg:text-left" data-aos="fade-left">
-                        <h2 class="text-4xl md:text-5xl font-bold mb-6 text-white text-gradient">My Story at Viking Sabre Graphics</h2>
-                        <p class="text-lg text-gray-300 leading-relaxed mb-6">
+                        <h2 class="text-4xl md:text-5xl font-bold mb-6 text-white text-gradient" data-cms-editable="about-heading">My Story at Viking Sabre Graphics</h2>
+                        <p class="text-lg text-gray-300 leading-relaxed mb-6" data-cms-editable="about-paragraph-1">
                             I founded Viking Sabre Graphics with a singular passion: to forge powerful visual identities and captivating designs that help businesses cut through the noise. My journey in design is driven by the belief that exceptional visuals are not just about aesthetics, but about clear communication and tangible results.
                         </p>
-                        <p class="text-lg text-gray-300 leading-relaxed">
+                        <p class="text-lg text-gray-300 leading-relaxed" data-cms-editable="about-paragraph-2">
                             Every project is a personal endeavor for me. I collaborate closely with each client to deeply understand their vision, translating it into compelling visual narratives. I am committed to delivering designs that are not only beautiful but also highly effective and memorable, ensuring your brand stands out.
                         </p>
                         <a href="#contact" class="inline-block mt-8 bg-blue-600 hover:bg-blue-700 text-white font-bold py-3 px-8 rounded-full shadow-lg transition duration-300 ease-in-out viking-button-blue" aria-label="Learn more about me">
@@ -592,9 +836,67 @@
             <!-- Testimonials Section - Now for User Submissions -->
             <section id="testimonials" class="py-16 md:py-24 gradient-bg" data-aos="fade-up">
                 <div class="container mx-auto px-6 md:px-12 text-center">
-                    <h2 class="text-4xl md:text-5xl font-bold mb-12 text-white" data-aos="fade-up">Share Your Experience</h2>
-                    <div class="max-w-2xl mx-auto bg-gray-900 p-8 rounded-xl shadow-2xl" data-aos="fade-up" data-aos-delay="100">
-                        <p class="text-lg text-gray-300 mb-8">
+                    <h2 class="text-4xl md:text-5xl font-bold mb-12 text-white" data-aos="fade-up" data-cms-editable="testimonials-heading">What Clients Say</h2>
+                    <div id="testimonials-carousel" class="relative max-w-4xl mx-auto overflow-hidden rounded-xl shadow-2xl bg-gray-900 p-8">
+                        <div class="flex transition-transform duration-700 ease-in-out" id="testimonial-slides">
+                            <!-- Testimonial 1 -->
+                            <div class="w-full flex-shrink-0 text-center flex flex-col items-center justify-center p-4">
+                                <p class="text-gray-200 text-xl md:text-2xl italic mb-6 leading-relaxed" data-cms-editable="testimonial-1-quote">
+                                    "Viking Sabre Graphics transformed our brand identity. Their attention to detail and creative vision are unmatched. Highly recommend!"
+                                </p>
+                                <div class="flex items-center justify-center mb-4">
+                                    <img src="https://placehold.co/60x60/334155/e2e8f0?text=C1" alt="Client 1 Avatar" class="w-16 h-16 rounded-full mr-4 object-cover" loading="lazy">
+                                    <p class="text-white font-semibold text-lg" data-cms-editable="testimonial-1-author">- Jane Doe, CEO of InnovateTech</p>
+                                </div>
+                                <!-- Placeholder for Video Testimonial -->
+                                <div class="w-full max-w-md mt-4 bg-gray-700 rounded-lg overflow-hidden" data-cms-editable="testimonial-1-video">
+                                    <img src="https://placehold.co/400x225/1a202c/a0aec0?text=Video+Testimonial+1" alt="Video Testimonial Placeholder" class="w-full h-auto object-cover" loading="lazy">
+                                    <p class="text-gray-400 text-sm p-2">Click to watch video testimonial (conceptual)</p>
+                                </div>
+                            </div>
+                            <!-- Testimonial 2 -->
+                            <div class="w-full flex-shrink-0 text-center flex flex-col items-center justify-center p-4">
+                                <p class="text-gray-200 text-xl md:text-2xl italic mb-6 leading-relaxed" data-cms-editable="testimonial-2-quote">
+                                    "The web design work was exceptional. Intuitive, beautiful, and perfectly captured our vision. A true partner in design."
+                                </p>
+                                <div class="flex items-center justify-center mb-4">
+                                    <img src="https://placehold.co/60x60/334155/e2e8f0?text=C2" alt="Client 2 Avatar" class="w-16 h-16 rounded-full mr-4 object-cover" loading="lazy">
+                                    <p class="text-white font-semibold text-lg" data-cms-editable="testimonial-2-author">- John Smith, Founder of EcoSolutions</p>
+                                </div>
+                                <!-- Placeholder for Video Testimonial -->
+                                <div class="w-full max-w-md mt-4 bg-gray-700 rounded-lg overflow-hidden" data-cms-editable="testimonial-2-video">
+                                    <img src="https://placehold.co/400x225/1a202c/a0aec0?text=Video+Testimonial+2" alt="Video Testimonial Placeholder" class="w-full h-auto object-cover" loading="lazy">
+                                    <p class="text-gray-400 text-sm p-2">Click to watch video testimonial (conceptual)</p>
+                                </div>
+                            </div>
+                            <!-- Testimonial 3 -->
+                            <div class="w-full flex-shrink-0 text-center flex flex-col items-center justify-center p-4">
+                                <p class="text-gray-200 text-xl md:text-2xl italic mb-6 leading-relaxed" data-cms-editable="testimonial-3-quote">
+                                    "Their motion graphics brought our marketing campaigns to life. Dynamic, engaging, and highly effective. Fantastic work!"
+                                </p>
+                                <div class="flex items-center justify-center mb-4">
+                                    <img src="https://placehold.co/60x60/334155/e2e8f0?text=C3" alt="Client 3 Avatar" class="w-16 h-16 rounded-full mr-4 object-cover" loading="lazy">
+                                    <p class="text-white font-semibold text-lg" data-cms-editable="testimonial-3-author">- Emily Chen, Marketing Director</p>
+                                </div>
+                                <!-- Placeholder for Video Testimonial -->
+                                <div class="w-full max-w-md mt-4 bg-gray-700 rounded-lg overflow-hidden" data-cms-editable="testimonial-3-video">
+                                    <img src="https://placehold.co/400x225/1a202c/a0aec0?text=Video+Testimonial+3" alt="Video Testimonial Placeholder" class="w-full h-auto object-cover" loading="lazy">
+                                    <p class="text-gray-400 text-sm p-2">Click to watch video testimonial (conceptual)</p>
+                                </div>
+                            </div>
+                        </div>
+                        <!-- Carousel Navigation -->
+                        <button class="absolute top-1/2 left-4 transform -translate-y-1/2 bg-gray-700 bg-opacity-70 text-white p-3 rounded-full z-20 hover:bg-gray-600 transition" id="prev-testimonial" aria-label="Previous Testimonial">
+                            <i class="fas fa-chevron-left"></i>
+                        </button>
+                        <button class="absolute top-1/2 right-4 transform -translate-y-1/2 bg-gray-700 bg-opacity-70 text-white p-3 rounded-full z-20 hover:bg-gray-600 transition" id="next-testimonial" aria-label="Next Testimonial">
+                            <i class="fas fa-chevron-right"></i>
+                        </button>
+                    </div>
+
+                    <!-- Testimonial Submission Form -->
+                    <div class="max-w-2xl mx-auto bg-gray-900 p-8 rounded-xl shadow-2xl mt-16" data-aos="fade-up" data-aos-delay="100">
+                        <p class="text-lg text-gray-300 mb-8" data-cms-editable="testimonial-form-heading">
                             We'd love to hear how we're doing! Please share your feedback or testimonial below.
                         </p>
                         <form class="space-y-6">
@@ -617,8 +919,8 @@
             <!-- Call to Action Section -->
             <section class="py-16 md:py-24 bg-gray-900 text-center" data-aos="fade-up">
                 <div class="container mx-auto px-6 md:px-12">
-                    <h2 class="text-4xl md:text-5xl font-bold mb-6 text-white text-gradient">Ready to Elevate Your Brand?</h2>
-                    <p class="text-lg text-gray-300 mb-10 max-w-3xl mx-auto">
+                    <h2 class="text-4xl md:text-5xl font-bold mb-6 text-white text-gradient" data-cms-editable="cta-heading">Ready to Elevate Your Brand?</h2>
+                    <p class="text-lg text-gray-300 mb-10 max-w-3xl mx-auto" data-cms-editable="cta-subheading">
                         Let's collaborate to create stunning visuals that tell your story and captivate your audience.
                     </p>
                     <a href="#contact" class="bg-green-500 hover:bg-green-600 text-white font-bold py-4 px-10 rounded-full text-xl shadow-lg transition duration-300 ease-in-out viking-button-green" aria-label="Start your project today by contacting us">
@@ -627,12 +929,31 @@
                 </div>
             </section>
 
+            <!-- Newsletter Subscription -->
+            <section id="newsletter" class="py-16 md:py-24 gradient-bg" data-aos="fade-up">
+                <div class="container mx-auto px-6 md:px-12 text-center">
+                    <h2 class="text-4xl md:text-5xl font-bold mb-8 text-white" data-aos="fade-up" data-cms-editable="newsletter-heading">Join My Creative Horde!</h2>
+                    <p class="text-lg text-gray-200 mb-10 max-w-2xl mx-auto" data-aos="fade-up" data-aos-delay="100" data-cms-editable="newsletter-subheading">
+                        Subscribe to my newsletter for exclusive design tips, industry insights, and special offers.
+                    </p>
+                    <form class="max-w-xl mx-auto flex flex-col sm:flex-row gap-4" onsubmit="showCustomAlert('Subscription Confirmed!', 'Thank you for subscribing! This is a demo. No data will be saved.', 'Awesome!', 'bg-green-600 hover:bg-green-700 text-white'); return false;">
+                        <input type="email" placeholder="Your Email Address" class="flex-grow p-4 rounded-lg bg-gray-700 text-white border border-gray-600 focus:outline-none focus:border-green-500 transition duration-300" required aria-label="Your email address for newsletter">
+                        <button type="submit" class="bg-blue-600 hover:bg-blue-700 text-white font-bold py-4 px-8 rounded-lg shadow-lg transition duration-300 ease-in-out viking-button-blue" aria-label="Subscribe to newsletter">
+                            Subscribe <i class="fas fa-envelope ml-2"></i>
+                        </button>
+                    </form>
+                </div>
+            </section>
+
+            <!-- Section Divider after Newsletter -->
+            <div class="section-divider-wave top-to-bottom"></div>
+
             <!-- Contact Section -->
             <section id="contact" class="py-16 md:py-24 bg-gray-800" data-aos="fade-up">
                 <div class="container mx-auto px-6 md:px-12 text-center">
-                    <h2 class="text-4xl md:text-5xl font-bold mb-12 text-white text-gradient" data-aos="fade-up">Get In Touch</h2>
+                    <h2 class="text-4xl md:text-5xl font-bold mb-12 text-white text-gradient" data-aos="fade-up" data-cms-editable="contact-heading">Forge Your Vision With Me</h2>
                     <div class="max-w-2xl mx-auto bg-gray-900 p-8 rounded-xl shadow-2xl" data-aos="fade-up" data-aos-delay="100">
-                        <p class="text-lg text-gray-300 mb-8">
+                        <p class="text-lg text-gray-300 mb-8" data-cms-editable="contact-subheading">
                             Have a project in mind or just want to say hello? Fill out the form below or reach out directly.
                         </p>
                         <form class="space-y-6">
@@ -643,6 +964,21 @@
                             <div>
                                 <label for="email" class="sr-only">Your Email</label>
                                 <input type="email" id="email" placeholder="Your Email" class="w-full p-4 rounded-lg bg-gray-700 text-white border border-gray-600 focus:outline-none focus:border-green-500 transition duration-300" required aria-label="Your Email">
+                            </div>
+                            <div>
+                                <label for="company" class="sr-only">Company Name</label>
+                                <input type="text" id="company" placeholder="Company Name (Optional)" class="w-full p-4 rounded-lg bg-gray-700 text-white border border-gray-600 focus:outline-none focus:border-green-500 transition duration-300" aria-label="Company Name">
+                            </div>
+                            <div>
+                                <label for="service-interest" class="sr-only">Service Interest</label>
+                                <select id="service-interest" class="w-full p-4 rounded-lg bg-gray-700 text-white border border-gray-600 focus:outline-none focus:border-green-500 transition duration-300" aria-label="Service Interest">
+                                    <option value="">Select Service Interest (Optional)</option>
+                                    <option value="brand-identity">Brand Identity Design</option>
+                                    <option value="web-design">Web Design</option>
+                                    <option value="motion-graphics">Motion Graphics & Animation</option>
+                                    <option value="illustration">Illustration & Iconography</option>
+                                    <option value="other">Other</option>
+                                </select>
                             </div>
                             <div>
                                 <label for="subject" class="sr-only">Subject</label>
@@ -669,17 +1005,55 @@
         <!-- Mouse Follower Element -->
         <div id="mouse-follower"></div>
 
+        <!-- Cookie Consent Banner -->
+        <div id="cookie-consent-banner" class="hidden">
+            <p class="text-sm md:text-base text-center md:text-left">
+                This website uses cookies to ensure you get the best experience. By continuing to use this site, you agree to our <a href="#" class="text-green-400 hover:underline">Cookie Policy</a>.
+            </p>
+            <div class="flex gap-4 mt-4 md:mt-0">
+                <button id="accept-cookies" class="bg-green-600 hover:bg-green-700 text-white font-bold py-2 px-6 rounded-full transition duration-300 ease-in-out viking-button-green" aria-label="Accept Cookies">Accept</button>
+                <button id="decline-cookies" class="bg-gray-700 hover:bg-gray-600 text-white font-bold py-2 px-6 rounded-full transition duration-300 ease-in-out" aria-label="Decline Cookies">Decline</button>
+            </div>
+        </div>
+
         <!-- Footer -->
         <footer class="bg-gray-900 py-8 px-6 md:px-12 rounded-t-xl">
             <div class="container mx-auto text-center text-gray-400">
                 <p>&copy; 2025 Viking Sabre Graphics. All rights reserved.</p>
                 <p class="text-sm mt-2">Designed with passion and precision.</p>
+                <div class="flex justify-center space-x-6 mt-4">
+                    <a href="https://facebook.com/vikingsabregraphics" target="_blank" rel="noopener noreferrer" class="text-gray-400 hover:text-blue-500 transition duration-300" aria-label="Visit us on Facebook"><i class="fab fa-facebook-f text-xl"></i></a>
+                    <a href="https://twitter.com/vikingsabre" target="_blank" rel="noopener noreferrer" class="text-gray-400 hover:text-blue-400 transition duration-300" aria-label="Visit us on Twitter"><i class="fab fa-twitter text-xl"></i></a>
+                    <a href="https://linkedin.com/company/vikingsabregraphics" target="_blank" rel="noopener noreferrer" class="text-gray-400 hover:text-blue-700 transition duration-300" aria-label="Visit us on LinkedIn"><i class="fab fa-linkedin-in text-xl"></i></a>
+                    <a href="https://instagram.com/vikingsabregraphics" target="_blank" rel="noopener noreferrer" class="text-gray-400 hover:text-pink-500 transition duration-300" aria-label="Visit us on Instagram"><i class="fab fa-instagram text-xl"></i></a>
+                    <a href="mailto:info@vikingsabregraphics.com" class="text-gray-400 hover:text-green-400 transition duration-300" aria-label="Email us"><i class="fas fa-envelope text-xl"></i></a>
+                </div>
+                <div class="mt-4 text-sm">
+                    <a href="#" class="text-gray-400 hover:text-green-400 transition duration-300 mx-2" aria-label="Read our Privacy Policy">Privacy Policy</a> |
+                    <a href="#" class="text-gray-400 hover:text-green-400 transition duration-300 mx-2" aria-label="Read our Terms of Service">Terms of Service</a> |
+                    <a href="#" class="text-gray-400 hover:text-green-400 transition duration-300 mx-2" aria-label="CMS Integration Link">CMS Integration (Conceptual)</a>
+                </div>
             </div>
         </footer>
     </div>
 
     <!-- AOS (Animate On Scroll) JS -->
     <script src="https://unpkg.com/aos@2.3.1/dist/aos.js"></script>
+    <script>
+        // PWA Service Worker Registration (Conceptual)
+        if ('serviceWorker' in navigator) {
+            window.addEventListener('load', () => {
+                navigator.serviceWorker.register('/service-worker.js').then(registration => {
+                    console.log('SW registered: ', registration);
+                }).catch(registrationError => {
+                    console.log('SW registration failed: ', registrationError);
+                });
+            });
+        }
+    </script>
+    <!-- PWA Manifest Link -->
+    <link rel="manifest" href="/manifest.json">
+
     <script>
         // Initialize AOS
         AOS.init({
@@ -749,22 +1123,46 @@
         document.querySelector('#contact form').addEventListener('submit', function(event) {
             event.preventDefault();
             const submitButton = event.submitter; // Get the button that triggered the submit
-            submitButton.classList.add('viking-button-pressed');
-            setTimeout(() => {
-                submitButton.classList.remove('viking-button-pressed');
+            if (submitButton) { // Check if submitButton exists
+                submitButton.classList.add('viking-button-pressed');
+                setTimeout(() => {
+                    submitButton.classList.remove('viking-button-pressed');
+                    showCustomAlert('Form Submitted!', 'This is a demo. No data will be sent. Thank you for your interest!', 'Close', 'bg-blue-600 hover:bg-blue-700 text-white');
+                }, 300); // Brief pressed state
+            } else {
                 showCustomAlert('Form Submitted!', 'This is a demo. No data will be sent. Thank you for your interest!', 'Close', 'bg-blue-600 hover:bg-blue-700 text-white');
-            }, 300); // Brief pressed state
+            }
         });
 
         document.querySelector('#testimonials form').addEventListener('submit', function(event) {
             event.preventDefault();
             const submitButton = event.submitter;
-            submitButton.classList.add('viking-button-pressed');
-            setTimeout(() => {
-                submitButton.classList.remove('viking-button-pressed');
+            if (submitButton) { // Check if submitButton exists
+                submitButton.classList.add('viking-button-pressed');
+                setTimeout(() => {
+                    submitButton.classList.remove('viking-button-pressed');
+                    showCustomAlert('Feedback Submitted!', 'Thank you for your feedback! This is a demo. Your testimonial will not be saved.', 'Close', 'bg-green-600 hover:bg-green-700 text-white');
+                }, 300); // Brief pressed state
+            } else {
                 showCustomAlert('Feedback Submitted!', 'Thank you for your feedback! This is a demo. Your testimonial will not be saved.', 'Close', 'bg-green-600 hover:bg-green-700 text-white');
-            }, 300); // Brief pressed state
+            }
         });
+
+        // Newsletter form submission
+        document.querySelector('#newsletter form').addEventListener('submit', function(event) {
+            event.preventDefault();
+            const submitButton = event.submitter;
+            if (submitButton) { // Check if submitButton exists
+                submitButton.classList.add('viking-button-pressed');
+                setTimeout(() => {
+                    submitButton.classList.remove('viking-button-pressed');
+                    showCustomAlert('Subscription Confirmed!', 'Thank you for subscribing! This is a demo. No data will be saved.', 'Awesome!', 'bg-blue-600 hover:bg-blue-700 text-white');
+                }, 300);
+            } else {
+                showCustomAlert('Subscription Confirmed!', 'Thank you for subscribing! This is a demo. No data will be saved.', 'Awesome!', 'bg-blue-600 hover:bg-blue-700 text-white');
+            }
+        });
+
 
         // Particle generation for Hero Section (existing)
         const particleContainer = document.getElementById('particle-container');
@@ -910,7 +1308,7 @@
             });
         });
 
-        // NEW: Navigation Active State with Intersection Observer
+        // Navigation Active State with Intersection Observer
         const navLinks = document.querySelectorAll('.nav-link-hover');
         const sections = document.querySelectorAll('section[id]'); // Get all sections with an ID
 
@@ -961,6 +1359,100 @@
             });
         });
 
+        // Portfolio Filtering Logic
+        const filterButtons = document.querySelectorAll('.portfolio-filter-btn');
+        const portfolioItems = document.querySelectorAll('.portfolio-item');
+        const portfolioGrid = document.getElementById('portfolio-grid');
+
+        filterButtons.forEach(button => {
+            button.addEventListener('click', () => {
+                // Remove active class from all buttons
+                filterButtons.forEach(btn => btn.classList.remove('active-filter'));
+                // Add active class to the clicked button
+                button.classList.add('active-filter');
+
+                const filter = button.dataset.filter;
+
+                // Hide all items first for smooth transition
+                portfolioItems.forEach(item => {
+                    item.style.opacity = '0';
+                    item.style.transform = 'scale(0.9)';
+                    item.style.display = 'none'; // Hide completely after transition
+                });
+
+                setTimeout(() => { // Allow time for hide animation
+                    portfolioItems.forEach(item => {
+                        if (filter === 'all' || item.classList.contains(filter)) {
+                            item.style.display = 'block'; // Make visible
+                            setTimeout(() => { // Animate back in
+                                item.style.opacity = '1';
+                                item.style.transform = 'scale(1)';
+                            }, 50); // Small delay for staggered effect
+                        }
+                    });
+                }, 300); // Match hide transition duration
+            });
+        });
+
+        // Testimonials Carousel Logic
+        const testimonialSlides = document.getElementById('testimonial-slides');
+        const prevTestimonialBtn = document.getElementById('prev-testimonial');
+        const nextTestimonialBtn = document.getElementById('next-testimonial');
+        let currentTestimonialIndex = 0;
+        const totalTestimonials = testimonialSlides.children.length;
+
+        function updateTestimonialCarousel() {
+            const slideWidth = testimonialSlides.children[0].clientWidth;
+            testimonialSlides.style.transform = `translateX(-${currentTestimonialIndex * slideWidth}px)`;
+        }
+
+        nextTestimonialBtn.addEventListener('click', () => {
+            currentTestimonialIndex = (currentTestimonialIndex + 1) % totalTestimonials;
+            updateTestimonialCarousel();
+        });
+
+        prevTestimonialBtn.addEventListener('click', () => {
+            currentTestimonialIndex = (currentTestimonialIndex - 1 + totalTestimonials) % totalTestimonials;
+            updateTestimonialCarousel();
+        });
+
+        // Update carousel on window resize
+        window.addEventListener('resize', updateTestimonialCarousel);
+        window.addEventListener('load', updateTestimonialCarousel); // Initial positioning
+
+        // Cookie Consent Logic
+        const cookieConsentBanner = document.getElementById('cookie-consent-banner');
+        const acceptCookiesBtn = document.getElementById('accept-cookies');
+        const declineCookiesBtn = document.getElementById('decline-cookies');
+
+        function showCookieBanner() {
+            if (!localStorage.getItem('cookieConsent')) {
+                cookieConsentBanner.classList.remove('hidden');
+                setTimeout(() => {
+                    cookieConsentBanner.classList.add('show');
+                }, 100); // Small delay for transition
+            }
+        }
+
+        acceptCookiesBtn.addEventListener('click', () => {
+            localStorage.setItem('cookieConsent', 'accepted');
+            cookieConsentBanner.classList.remove('show');
+            setTimeout(() => {
+                cookieConsentBanner.classList.add('hidden');
+            }, 500);
+        });
+
+        declineCookiesBtn.addEventListener('click', () => {
+            localStorage.setItem('cookieConsent', 'declined');
+            cookieConsentBanner.classList.remove('show');
+            setTimeout(() => {
+                cookieConsentBanner.classList.add('hidden');
+            }, 500);
+            // Optionally, disable non-essential cookies here if they were enabled
+        });
+
+        window.addEventListener('load', showCookieBanner);
     </script>
 </body>
 </html>
+
